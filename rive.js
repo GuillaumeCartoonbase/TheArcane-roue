@@ -71,3 +71,7 @@ let turnScriptedInput;
 function turnScripted() {
 	return turnScriptedInput.fire();
 }
+
+function addOne() {
+	return inputs.find((i) => i.name === "addOne").fire();
+}
