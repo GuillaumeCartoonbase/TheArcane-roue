@@ -23,13 +23,8 @@ function onLoadHandler() {
 	// Prevent a blurry canvas by using the device pixel ratio
 	riveInstance.resizeDrawingSurfaceToCanvas();
 	inputs = riveInstance.stateMachineInputs(stateMachine);
-
-	// Turns the wheel in a scripted way
-	turnScriptedInput = inputs.find((i) => i.name === "turnScripted");
-
-	// Turns the wheel randomly (from Rive)
-	turnRandomInput = inputs.find((i) => i.name === "turnRandom");
 }
+
 const eventFire = (riveEvent) => {
 	const eventData = riveEvent.data;
 	const eventName = eventData.name;
@@ -61,16 +56,6 @@ const eventFire = (riveEvent) => {
 
 // Register the event handler
 riveInstance.on(rive.EventType.RiveEvent, eventFire);
-
-let turnRandomInput;
-function turnRandom() {
-	return turnRandomInput.fire();
-}
-
-let turnScriptedInput;
-function turnScripted() {
-	return turnScriptedInput.fire();
-}
 
 function addOne() {
 	return inputs.find((i) => i.name === "addOne").fire();
