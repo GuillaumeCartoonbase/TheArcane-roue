@@ -1,0 +1,15 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+#rive {
+	display: block;
+	height: 50%;
+	margin: auto;
+}
+#tester {
+	margin: auto;
+	display: block;
+	text-align: center;
+}

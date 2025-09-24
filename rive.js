@@ -32,21 +32,27 @@ const eventFire = (riveEvent) => {
 	switch (eventName) {
 		case "card1":
 			console.log("1");
+			tester(eventName.slice(-1));
 			break;
 		case "card2":
 			console.log("2");
+			tester(eventName.slice(-1));
 			break;
 		case "card3":
 			console.log("3");
+			tester(eventName.slice(-1));
 			break;
 		case "card4":
 			console.log("4");
+			tester(eventName.slice(-1));
 			break;
 		case "card5":
 			console.log("5");
+			tester(eventName.slice(-1));
 			break;
 		case "card6":
 			console.log("6");
+			tester(eventName.slice(-1));
 			break;
 		default:
 			console.log("unused event: " + eventName);
@@ -59,4 +65,9 @@ riveInstance.on(rive.EventType.RiveEvent, eventFire);
 
 function addOne() {
 	return inputs.find((i) => i.name === "addOne").fire();
+}
+
+function tester(identifiant) {
+	const tester = document.getElementById("tester");
+	tester.innerText = identifiant;
 }
